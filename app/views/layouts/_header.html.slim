@@ -1,0 +1,30 @@
+header
+  .container
+    .navbar.navbar-default role="navigation" 
+      .navbar-header
+        = link_to image_tag("logo.png", alt: "Inforing Software Ульяновск", title: "Инфоринг Ульяновск", class: "img-responsive navbar-brand", width: 240, height: 112), "#", target: "_top"
+        a.btn.btn-navbar.btn-default.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" 
+          span.nb_left.pull-left
+            i.fa.fa-bars
+          span.nb_right.pull-right Меню
+      .collapse.navbar-collapse
+        ul.nav.pull-right.navbar-nav
+          = nav_link("Главная", root_path)
+          = nav_link("О нас", about_path)
+          = nav_link("Цены", price_path)
+          = nav_link("Портфолио", portfolio_path)
+          li
+            a href="blog.html" Блог
+          = nav_link("Контакты", contact_path)
+              
+    #social_media_wrapper.animated.fadeInDown
+      a href="https://www.facebook.com" 
+        i.fa.fa-facebook
+      a href="https://twitter.com/leonartgr" 
+        i.fa.fa-twitter
+      a href="#googleplus" 
+        i.fa.fa-google-plus
+    #phone.animated.fadeIn
+      h4 
+        i.fa.fa-phone
+        span 680-780

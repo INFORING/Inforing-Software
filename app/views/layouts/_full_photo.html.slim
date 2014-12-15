@@ -1,0 +1,25 @@
+.full_page_photo class="#{full_page_photo}"
+  - if current_page?(about_path)
+    .container
+      section.call_to_action
+        h3.animated.bounceInDown
+          | Мы
+          strong  прокачаем
+          |  Ваш бизнес.
+        h4.animated.bounceInUp.skincolored
+          | Больше
+          strong  пользователей
+          |  - больше прибыли!
+  - elsif current_page?(price_path)
+    .container
+      section.call_to_action
+        h3.animated.bounceInDown
+          | Мы
+          strong  прокачаем
+          |  Ваш бизнес.
+        h4.animated.bounceInUp.skincolored
+          | Больше
+          strong  пользователей
+          |  - больше прибыли!
+  -elsif current_page?(contact_path)
+    #map

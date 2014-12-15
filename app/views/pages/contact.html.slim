@@ -1,0 +1,60 @@
+.container  
+  section.hgroup
+    h1 Контакты
+    h2 Текст.
+    ul.breadcrumb.pull-right
+      li
+        a href="index.html" Главная
+      li.active Контакты
+  section
+    .row
+      .office_address.col-sm-4.col-md-4
+        .team_member
+          = image_tag "logo-gray.png", alt: "Inforing Software", height: "90"
+          p
+            small Web-Development Company
+          br
+          br
+          .team_social
+            a href="https://www.facebook.com" 
+              i.fa.fa-facebook
+            a href="https://twitter.com/leonartgr" 
+              i.fa.fa-twitter
+            a href="#pinterest" 
+              i.fa.fa-linkedin
+            a href="https://github.com/PlethoraThemes" 
+              i.fa.fa-github-alt
+          address
+            strong
+            br
+            | город Ульяновск
+            br
+            | улица Льва Толстого дом 60
+            br
+            abbr title="Телефон" Тел:
+            |  8 (8422) 680-780
+          br
+          address
+            abbr title="E-mail" E-mail:
+            a href="mailto:support@software.inforing73.net"  support@software.inforing73.net
+      .contact_form.col-sm-8.col-md-8
+        form#contact_form method="post" name="contact_form" 
+          .row
+            .col-sm-6.col-md-6
+              label Имя
+              input#name.form-control name="name" type="text" value="" /
+            .col-sm-6.col-md-6
+              label E-mail
+              input#email.form-control name="email" type="text" value="" /
+          .row
+            .col-sm-12.col-md-12
+              label Тема
+              input#subject.form-control name="subject" type="text" /
+          .row
+            .col-sm-12.col-md-12
+              label Сообщение
+              textarea#message.form-control name="message" rows="8" 
+            .col-sm-12.col-md-12
+              br/
+              a#submit_btn.btn.btn-primary name="submit"  Submit Message
+              span#notice.alert.alert-warning.alert-dismissable.hidden style="margin-left:20px;" 
