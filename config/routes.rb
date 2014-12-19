@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   match '/about', to: 'pages#about', via: 'get'
   match '/price', to: 'pages#price', via: 'get'
   match '/portfolio', to: 'pages#portfolio', via: 'get'
-  match '/portfolio-item', to: 'pages#portfolio-item', via: 'get'
+  match '/portfolio_item', to: 'pages#portfolio_item', via: 'get'
   match '/contact', to: 'pages#contact', via: 'get'
-
+  match 'admin_panel', to: 'pages#admin_panel', via: 'get'
+  match '/admin/signin', to: 'pages#admin_signin', via: 'get'
+  match '/admin_session_create', to: 'pages#admin_session_create', via: 'post'
+  match '/admin_session_destroy', to: 'pages#admin_session_create', via: 'get'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
