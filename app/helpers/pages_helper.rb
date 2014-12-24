@@ -4,7 +4,7 @@ module PagesHelper
 	end
 
 	def full_photo
-		unless current_page?(root_path) or current_page?(portfolio_path) or current_page?(portfolio_item_path)
+		unless current_page?(root_path) or current_page?(portfolio_items_path)
 	  	render 'layouts/full_photo'
 	  end
 	end

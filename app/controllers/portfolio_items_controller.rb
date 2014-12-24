@@ -1,4 +1,4 @@
-class PortfolioItemController < ApplicationController
+class PortfolioItemsController < ApplicationController
 	def new	
 	end
 
@@ -9,6 +9,12 @@ class PortfolioItemController < ApplicationController
 	end
 
 	def update
+	end
+
+	def show
+	end
+
+	def index
 	end
 
 	def destroy

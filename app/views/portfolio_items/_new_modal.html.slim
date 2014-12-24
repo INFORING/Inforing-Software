@@ -1,0 +1,17 @@
+#NewPortfolioItemModal.modal.fade aria-hidden="true" aria-labelledby="NewPortfolioItemModal" role="dialog" tabindex="-1" 
+	.modal-dialog.modal-lg
+		.modal-content
+			.modal-header
+				button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+				h4#NewPortfolioItemModal.modal-title Добавление новости
+			= form_for @new_news,remote: true, multipart: true do |f|
+				.modal-body
+				  = f.text_field :title ,placeholder: "Название", class: "form-control"
+				  = f.text_area :description, rows: "10", placeholder: "Текст новости", class: "form-control"
+				  = f.text_field :date ,placeholder: "Дата", class: "form-control"
+				  = f.text_field :customer, placeholder: "Заказчик", class: "form-control"
+				  = f.text_field :location ,placeholder: "Расположение", class: "form-control"
+				  
+				.modal-footer
+					= f.submit "Подтвердить", class: "btn btn-primary pull-left", :disable_with => "Пожалуйста подождите.."
+					button.btn.btn-ar.btn-default data-dismiss="modal" type="button"  Закрыть
