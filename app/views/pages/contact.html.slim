@@ -38,23 +38,22 @@
             abbr title="E-mail" E-mail:
             a href="mailto:support@software.inforing73.net"  support@software.inforing73.net
       .contact_form.col-sm-8.col-md-8
-        form#contact_form method="post" name="contact_form" 
+        = form_tag feedback_path, method: :get do
           .row
             .col-sm-6.col-md-6
               label Имя
-              input#name.form-control name="name" type="text" value="" /
+              = text_field_tag :name, nil, class: "form-control"
             .col-sm-6.col-md-6
               label E-mail
-              input#email.form-control name="email" type="text" value="" /
+              = text_field_tag :email, nil, class: "form-control"
           .row
             .col-sm-12.col-md-12
               label Тема
-              input#subject.form-control name="subject" type="text" /
+              = text_field_tag :title, nil, class: "form-control"
           .row
             .col-sm-12.col-md-12
               label Сообщение
-              textarea#message.form-control name="message" rows="8" 
+              = text_area_tag :text, nil, class: "form-control"
             .col-sm-12.col-md-12
               br/
-              a#submit_btn.btn.btn-primary name="submit"  Submit Message
-              span#notice.alert.alert-warning.alert-dismissable.hidden style="margin-left:20px;" 
+              = submit_tag "Отправить", class: "btn btn-primary"

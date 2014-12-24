@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   match '/admin/signin', to: 'pages#admin_signin', via: 'get'
   match '/admin_session_create', to: 'pages#admin_session_create', via: 'post'
   match '/admin_session_destroy', to: 'pages#admin_session_create', via: 'get'
+  match '/feedback', to: 'pages#feedback', via: 'get'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

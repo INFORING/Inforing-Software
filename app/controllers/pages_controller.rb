@@ -11,6 +11,13 @@ class PagesController < ApplicationController
 	def admin_signin
 	end
 
+	def feedback
+		unless params[:name].blank? or params[:email].blank? or params[:text].blank? or params[:title].blank?
+  		Feedback.feedback(params[:name],params[:email],params[:title],params[:text]).deliver
+    end
+    redirect_to contact_path
+	end
+
 
 	def admin_session_create
 		if params[:password].to_s == "Ogurec2000"
