@@ -7,4 +7,12 @@ class Feedback < ActionMailer::Base
   	@text = text
   	mail(to: "nameless73@mail.ru", subject: "#{title}")
   end
+
+  def order(name, contacts, description, order)
+  	@name = name
+  	@contacts = contacts
+  	@order = order
+  	@description = description
+  	mail(to: "nameless73@mail.ru", subject: "заказ #{order}")
+  end
 end

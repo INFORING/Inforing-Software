@@ -1,0 +1,2 @@
+$('#EditPortfolioItem').html("<%= escape_javascript(render partial: 'portfolio_items/edit_modal', locals: {:@portfolio_item => @portfolio_item, :@categories => @categories}) %>");
+$('#EditPortfolioItemModal').modal('show');

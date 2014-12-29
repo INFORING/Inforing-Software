@@ -1,0 +1,22 @@
+#OrderModal.modal.fade aria-hidden="true" aria-labelledby="OrderModalLabel" role="dialog" tabindex="-1" 
+	.modal-dialog.modal-lg
+		.modal-content
+			.modal-header
+				button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+				h4#OrderModalLabel.modal-title Добавить новость
+			= form_tag	send_order_path , method: :get,remote: true do |f|
+				.modal-body
+					= text_field_tag :name ,nil,placeholder: "Имя", class: "form-control"
+					= text_field_tag :contacts,nil, rows: "10", placeholder: "Телефон/e-mail", class: "form-control"
+					= text_area_tag :description,nil, rows: "10", placeholder: "Описание", class: "form-control"
+					- if @order.nil?
+						= select_tag :order, options_for_select(@orders), class: "form-control"
+					- else
+						= select_tag :order,options_for_select(@orders,@order),disabled: true, class: "form-control"
+						= hidden_field_tag :order,@order
+
+
+					
+				.modal-footer
+					= submit_tag "Подтвердить", class: "btn btn-primary pull-left", :disable_with => "Пожалуйста подождите.."
+					button.btn.btn-ar.btn-default data-dismiss="modal" type="button"  Закрыть

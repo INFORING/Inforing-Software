@@ -1,0 +1,16 @@
+#PortfolioImageModal.modal.fade aria-hidden="true" aria-labelledby="PortfolioImageModalLabel" role="dialog" tabindex="-1" 
+	.modal-dialog.modal-lg
+		.modal-content
+			.modal-header
+				button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+				h4#PortfolioImageModalLabel.modal-title Добавить проект
+			= form_tag portfolio_image_description_path(@portfolio_item.id),method: :post,remote: true do |f|
+				.modal-body
+				  - @portfolio_item.portfolio_images.each do |i|
+				  	= image_tag i.image.url(:medium)
+				  	= text_field_tag "description#{i.id}", class: "form-control"
+
+				  
+				.modal-footer
+					= submit_tag "Подтвердить", class: "btn btn-primary pull-left", :disable_with => "Пожалуйста подождите.."
+					button.btn.btn-ar.btn-default data-dismiss="modal" type="button"  Закрыть

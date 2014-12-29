@@ -17,6 +17,8 @@ gem 'animate-rails'
 gem 'wow-rails'
 gem 'flexslider'
 gem 'twitter'
+gem 'remotipart'
+gem 'russian'
 
 
 group :development, :test do

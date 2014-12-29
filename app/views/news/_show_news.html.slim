@@ -1,0 +1,7 @@
+- @news.each do |n|
+	= n.title
+	= n.description
+	= image_tag n.image.url(:medium)
+	= link_to "Удалить", news_path(n),method: :delete, remote: true
+	= link_to "Редактировать", edit_news_path(n),method: :get, remote: true
+	p

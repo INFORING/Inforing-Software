@@ -28,7 +28,8 @@
             p
               strong 3
               | Текст 1
-          a.btn.btn-primary.btn-lg href="#"  Заказать!
+          = link_to order_path(order: "Промо-сайт"), remote: true do
+            .btn.btn-primary.btn-lg  Заказать!
       .col-sm-12.col-md-4
         .pricing_plan.special.wow.animated.flipInY
           h3
@@ -47,7 +48,8 @@
             p
               strong 3
               | Текст 1
-          a.btn.btn-primary.btn-lg href="#"  Заказать!
+          = link_to order_path(order: "Корпоративный сайт"), remote: true do
+            .btn.btn-primary.btn-lg  Заказать!
       .col-sm-12.col-md-4
         .pricing_plan.wow.animated.bounceInRight
           h3
@@ -66,7 +68,8 @@
             p
               strong 3
               | Текст 1
-          a.btn.btn-primary.btn-lg href="#"  Заказать!
+          = link_to order_path(order: "Интернет-магазин"), remote: true do
+            .btn.btn-primary.btn-lg  Заказать!
     .row
       .col-sm-12.col-md-4
         .pricing_plan.wow.animated.bounceInRight
@@ -88,7 +91,8 @@
             p
               strong 3
               | Текст 1
-          a.btn.btn-primary.btn-lg href="#"  Заказать!
+          = link_to order_path(order: "Продвижение сайта"), remote: true do
+            .btn.btn-primary.btn-lg  Заказать!
       .col-sm-12.col-md-4
         .pricing_plan.special.wow.animated.flipInX
           h3
@@ -109,7 +113,8 @@
             p
               strong 3
               | Текст 1
-          a.btn.btn-primary.btn-lg href="#"  Заказать!
+          = link_to order_path(order: "Контекстная реклама"), remote: true do
+            .btn.btn-primary.btn-lg  Заказать!
       .col-sm-12.col-md-4
         .pricing_plan.wow.animated.bounceInLeft
           h3
@@ -130,4 +135,6 @@
             p
               strong 3
               | Текст 1
-          a.btn.btn-primary.btn-lg href="#"  Заказать!
+          = link_to order_path(order: "Поддержка сайта"), remote: true do
+            .btn.btn-primary.btn-lg  Заказать!
+#Order

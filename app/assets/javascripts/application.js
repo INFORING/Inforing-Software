@@ -13,8 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.flexslider-min
+//= require jquery.remotipart
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap
 //= require wow
 //= require snap.svg-min.js
 //= require_tree .

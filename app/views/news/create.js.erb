@@ -1,0 +1,5 @@
+$('#NewNewsModal').modal('hide');
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
+$('#News').html("<%= escape_javascript(render partial: 'news/show_news', locals: {:@news => @news}) %>");
+

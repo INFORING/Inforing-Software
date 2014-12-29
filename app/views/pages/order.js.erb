@@ -1,0 +1,2 @@
+$('#Order').html("<%= escape_javascript(render partial: 'pages/order_modal', locals: {:@order => @order}) %>");
+$('#OrderModal').modal('show');

@@ -2,13 +2,42 @@ class PagesController < ApplicationController
 	include ApplicationHelper
 
 	def home
+		@portfolio_items = PortfolioItem.all
+		@news = News.first(3)
 	end
 
 	def about
+		@news = News.first(3)
+	end
+
+	def price
+    @news = News.all
+	end
+
+	def order
+		@order = params[:order]
+	  @orders = ["Промо-сайт","Корпоративный сайт","Интернет-магазин","Продвижение сайта","Контекстная реклама","Поддержка сайта"]
+		respond_to do |format|
+			format.js
+		end
+	end
+
+	def send_order
+		unless params[:name].blank? or params[:contacts].blank? or params[:description].blank? or params[:order].blank?
+  		Feedback.order(params[:name],params[:contacts],params[:description],params[:order]).deliver
+    end
+    respond_to do |format|
+      format.js
+    end
+	end
+
+	def contact
+		@news = News.first(3)
 	end
 	
 
 	def admin_signin
+		@news = News.first(3)
 	end
 
 	def feedback

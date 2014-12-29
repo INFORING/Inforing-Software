@@ -1,73 +1,7 @@
 .container
-  = link_to "Добавить", new_portfolio_item_path
-  section.hgroup
-    h1 Портфолио
-    h2
-      | Текст.
-    ul.breadcrumb.pull-right
-      li
-        a href="index.html" Главная
-      li.active Портфолио
-  
-  section
-    ul.portfolio_filters
-      li
-        a.active data-filter="*" href="#" Все
-      li
-        a data-filter=".cat_promo" href="#" Промо-сайты
-      li
-        a data-filter=".cat_corporate" href="#" Корпоративные сайты
-      li
-        a data-filter=".cat_ecommerce" href="#" Интернет-магазины
-      li
-        a data-filter=".cat_seo" href="#" Продвижение сайтов
-      li
-        a data-filter=".cat_support" href="#" Поддержка сайтов
-
-  section.portfolio_strict
-    .row.isotope_portfolio_container
-      .cat_corporate.cat_ecommerce.col-xs-12.col-sm-6.col-md-4.col-lg-4.isotope-item
-        .portfolio_item
-          a href="portfolio_item.html" 
-            figure style="background-image:url(http://www.leonart.gr/htmlthemes/restart_v3/images/portfolio/p4.jpg)" 
-              figcaption
-                p Описание
-                .view_button Подробнее
-          .portfolio_description
-            h3
-              a href="portfolio_item.html" Inforing Service
-            p Разработка, продвижение, поддержка
-      .cat_corporate.col-xs-12.col-sm-6.col-md-4.col-lg-4.isotope-item
-        .portfolio_item
-          a href="portfolio_item.html" 
-            figure style="background-image:url(http://www.leonart.gr/htmlthemes/restart_v3/images/portfolio/p4.jpg)" 
-              figcaption
-                p Описание
-                .view_button Подробнее
-          .portfolio_description
-            h3
-              a href="portfolio_item.html" Inforing Service
-            p Разработка, продвижение, поддержка
-      .cat_promo.col-xs-12.col-sm-6.col-md-4.col-lg-4.isotope-item
-        .portfolio_item
-          a href="portfolio_item.html" 
-            figure style="background-image:url(http://www.leonart.gr/htmlthemes/restart_v3/images/portfolio/p4.jpg)" 
-              figcaption
-                p Описание
-                .view_button Подробнее
-          .portfolio_description
-            h3
-              a href="portfolio_item.html" Inforing Service
-            p Разработка, продвижение, поддержка
-      .cat_ecommerce.col-xs-12.col-sm-6.col-md-4.col-lg-4.isotope-item
-        .portfolio_item
-          a href="portfolio_item.html" 
-            figure style="background-image:url(http://www.leonart.gr/htmlthemes/restart_v3/images/portfolio/p4.jpg)" 
-              figcaption
-                p Описание
-                .view_button Подробнее
-          .portfolio_description
-            h3
-              a href="portfolio_item.html" Inforing Service
-            p Разработка, продвижение, поддержка
+  = link_to "Добавить", new_portfolio_item_path, remote: true
+  #PortfolioItems
+    = render 'portfolio_items/show_items', locals: {:@portfolio_items => @portfolio_items}
 #NewPortfolioItem
+#PortfolioImage
+#EditPortfolioItem

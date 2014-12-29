@@ -25,8 +25,9 @@
             h2.section_header.skincolored
               | Построй свой бизнес
               small вместе с нами
-            a.btn.btn-primary href="documentation/index.html" 
-              | Заказать сайт
+            = link_to order_path,remote: true do
+              .btn.btn-primary Заказать сайт
+              
   section.call_to_action
     i.fa.fa-star.fa-5x
     h3 Текст.
@@ -104,3 +105,4 @@
             a href="https://github.com/PlethoraThemes" 
               i.fa.fa-github-alt
           p.short_bio Текст.
+#Order

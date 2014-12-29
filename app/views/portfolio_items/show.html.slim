@@ -1,6 +1,7 @@
 .container
   section.hgroup
-    h1 Inforing Service
+    h1 
+      = @portfolio_item.title
     h2
       | Текст.
     ul.breadcrumb.pull-right
@@ -78,22 +79,23 @@
       .col-sm-4.col-md-4
         article.portfolio_details
           h2.section_header О проекте
-          p Текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст, текст.
+          p
+            = @portfolio_item.description
           br
           br
           div
             p
-              strong Дата:
-              |  Ноябрь 2014
+              strong Дата:  
+              = @portfolio_item.date
             p
-              strong Клиент:
-              |  ООО "Инфоринг"
+              strong Клиент:  
+              = @portfolio_item.customer
             p
-              strong Категория:
-              |  Разработка, продвижение, поддержка
+              strong Категория:  
+              = @portfolio_item.category
             p
-              strong Расположение:
-              |  Россия
+              strong Расположение:  
+              = @portfolio_item.location
           br
           br
-          a.btn.btn-danger.center-block.btn-lg href="#" Перейти на сайт проекта
+          a.btn.btn-danger.center-block.btn-lg href="#{@portfolio_item.url}" Перейти на сайт проекта

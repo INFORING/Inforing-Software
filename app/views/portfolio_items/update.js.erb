@@ -1,0 +1,5 @@
+$('#EditPortfolioItemModal').modal('hide');
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
+$('#PortfolioItems').html("<%= escape_javascript(render partial: 'portfolio_items/show_items', locals: {:@portfolio_items => @portfolio_items}) %>");
+

@@ -30,36 +30,17 @@
       | Портфолио
       small Присоединяйся к ним!
     .portfolio_strict.row
-      .col-sm-4.col-md-4
-        .portfolio_item.wow.animated.flipInX
-          a href="portfolio_item.html" 
-            figure style="background-image:url(http://www.leonart.gr/htmlthemes/restart_v3/images/portfolio/p4.jpg)" 
-              figcaption
-                p Описание
-                .view_button Подробнее
-          .portfolio_description
-            h3
-              a href="portfolio_item.html" Inforing Service
-            p Разработка, продвижение, поддержка
-      .col-sm-4.col-md-4
-        .portfolio_item.wow.animated.flipInX
-          a href="portfolio_item.html" 
-            figure style="background-image:url(http://www.leonart.gr/htmlthemes/restart_v3/images/portfolio/p4.jpg)" 
-              figcaption
-                p Описание
-                .view_button Подробнее
-          .portfolio_description
-            h3
-              a href="portfolio_item.html" Inforing Service
-            p Разработка, продвижение, поддержка
-      .col-sm-4.col-md-4
-        .portfolio_item.wow.animated.flipInX
-          a href="portfolio_item.html" 
-            figure style="background-image:url(http://www.leonart.gr/htmlthemes/restart_v3/images/portfolio/p4.jpg)" 
-              figcaption
-                p Описание
-                .view_button Подробнее
-          .portfolio_description
-            h3
-              a href="portfolio_item.html" Inforing Service
-            p Разработка, продвижение, поддержка
+      - @portfolio_items.each do |i|
+        .col-sm-4.col-md-4
+          .portfolio_item.wow.animated.flipInX
+            = link_to portfolio_item_path(i), method: :get do
+              figure style="background-image:url(#{i.portfolio_images.first.image.url})" 
+                figcaption
+                  p Описание
+                  .view_button Подробнее
+            .portfolio_description
+              h3
+                = link_to portfolio_item_path(i), method: :get do 
+                  = i.title
+              p 
+                = i.category

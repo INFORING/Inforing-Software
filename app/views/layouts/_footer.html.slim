@@ -29,22 +29,20 @@ footer
         .footer_teaser.col-sm-4.col-md-4
           h3 Последние новости
           ul.media-list
-            li.media
-              a.media-photo href="#" style="background-image:url(http://www.leonart.gr/htmlthemes/restart_v3/images/portfolio/t5.jpg)" 
-              a.media-date href="#" 
-                | 19
-                span ФЕВ
-              h5.media-heading
-                a href="#"  Новость 1
-              p Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст....
-            li.media
-              a.media-photo href="#" style="background-image:url(http://www.leonart.gr/htmlthemes/restart_v3/images/portfolio/t5.jpg)"
-              a.media-date href="#" 
-                | 19
-                span ФЕВ
-              h5.media-heading
-                a href="#"  Новость 1
-              p Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст....
+            - @news.each do |n|
+              li.media
+                = link_to news_path(n) do   
+                  .media-photo style="background-image:url(#{n.image.url})" 
+                = link_to news_path(n) do   
+                  a.media-date href="#{url_for news_path(n)}" 
+                    = n.created_at.day
+                    span
+                      = Russian::strftime(Time.now, "%b")
+                h5.media-heading
+                  = link_to news_path(n)
+                    = n.title
+                p 
+                  = n.description
   section.copyright
     .container
       .row

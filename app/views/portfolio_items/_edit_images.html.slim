@@ -1,0 +1,4 @@
+- @portfolio_item.portfolio_images.each do |i|
+	= image_tag i.image.url(:thumb)
+	= link_to portfolio_image_delete_path(i), method: :delete, remote: true do
+		i.fa.fa-close
